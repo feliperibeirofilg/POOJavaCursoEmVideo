@@ -59,8 +59,12 @@ public class Metodos {
     }
 
     public List<Banco> listarClientes(){
-        for(Banco cliente : bancoList){
-            System.out.println("Nome cliente: " + cliente.getNome() + "Saldo: "+ cliente.getSaldo());
+        if(bancoList.isEmpty()){
+            System.out.println("Nenhum cliente cadastrado ");
+        }else {
+            for (Banco cliente : bancoList) {
+                System.out.println("Nome cliente: " + cliente.getNome() + "Saldo: " + cliente.getSaldo());
+            }
         }
         return bancoList;
     }

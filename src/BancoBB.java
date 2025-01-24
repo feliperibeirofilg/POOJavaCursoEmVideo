@@ -14,11 +14,11 @@ public class BancoBB {
     int op = 0;
 
 do {
-    System.out.println("Selecione uma opcao:" +
-            "1 - Adicionar conta." +
-            "2 - Adicionar saldo." +
-            "3 - Sacar dinheiro" +
-            "0 - sair");
+    System.out.println("Selecione uma opcao:\n" +
+            "1 - Adicionar conta.\n" +
+            "2 - Adicionar saldo.\n" +
+            "3 - Sacar dinheiro\n" +
+            "0 - sair\n");
 
     op = scanner.nextInt();
 
@@ -32,7 +32,9 @@ do {
         case 3:
             metodos.sacarValor();
             break;
-
+        case 4:
+            metodos.listarClientes();
+            break;
         case 0:
             System.out.println("saindo");
             break;
