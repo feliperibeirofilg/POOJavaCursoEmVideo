@@ -2,7 +2,7 @@ public class Banco {
 
     public int numConta;
     public String nome;
-    public Float saldo;
+    public float saldo = 0.0f;
     public String tipoConta;
     public boolean status;
 
@@ -48,7 +48,7 @@ public class Banco {
         this.nome = nome;
     }
 
-    public Float getSaldo() {
+    public float getSaldo() {
         return saldo;
     }
 

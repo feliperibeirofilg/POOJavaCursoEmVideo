@@ -25,19 +25,20 @@ public class Metodos {
     }
 
     public Float adicionarSaldo(){
-        String nome;
+        String nomeCliente;
         System.out.println("Qual o nome do cliente? ");
-        nome = scanner.nextLine();
+        nomeCliente = scanner.nextLine();
 
-        for(Banco cliente : bancoList) {
-            if (cliente.getNome().equalsIgnoreCase(nome)) {
+        for(Banco nome : bancoList) {
+            if (banco.getNome() != null && banco.getNome().equalsIgnoreCase(nomeCliente)) {
                 System.out.println("Qual o valor adicionar? ");
-                float valorAdicionar =scanner.nextFloat();
-                cliente.setSaldo(cliente.getSaldo() + valorAdicionar);
-                System.out.println("Saldo atualizado: " +cliente.getSaldo());
+                float valorAdicionar = scanner.nextFloat();
+                banco.setSaldo(banco.getSaldo() + valorAdicionar);
+                System.out.println("Saldo atualizado: " +banco.getSaldo());
+            }else{
+                System.out.println("Nome encontrado e nulo");
             }
         }
-        System.out.println("Cliente n encontrado");
         return banco.getSaldo();
     }
 
@@ -55,5 +56,12 @@ public class Metodos {
     }
     private int gerarNumeroConta(){
         return (int)(Math.random() * 1000000); // Gera um número de conta aleatório
+    }
+
+    public List<Banco> listarClientes(){
+        for(Banco cliente : bancoList){
+            System.out.println("Nome cliente: " + cliente.getNome() + "Saldo: "+ cliente.getSaldo());
+        }
+        return bancoList;
     }
 }

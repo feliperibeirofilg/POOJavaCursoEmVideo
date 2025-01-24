@@ -8,33 +8,37 @@ import java.util.Scanner;
 // sacar dinheiro
 public class BancoBB {
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
 
         Metodos metodos = new Metodos();
     int op = 0;
 
+do {
+    System.out.println("Selecione uma opcao:" +
+            "1 - Adicionar conta." +
+            "2 - Adicionar saldo." +
+            "3 - Sacar dinheiro" +
+            "0 - sair");
 
-            System.out.println("Selecione uma opcao:" +
-                    "1 - Adicionar conta." +
-                    "2 - Adicionar saldo." +
-                    "3 - Sacar dinheiro" +
-                    "0 - sair");
-        Scanner scanner = new Scanner(System.in);
-        op = scanner.nextInt();
-        while(op != 0) {
-            switch (op) {
-                case 1:
-                    metodos.adicionarConta();
-                    break;
-                case 2:
-                    metodos.adicionarSaldo();
-                    break;
-                case 3:
-                    metodos.sacarValor();
-                    break;
-                case 0:
-                    System.out.println("saindo");
-                    break;
-            }
-        }
+    op = scanner.nextInt();
+
+    switch (op) {
+        case 1:
+            metodos.adicionarConta();
+            break;
+        case 2:
+            metodos.adicionarSaldo();
+            break;
+        case 3:
+            metodos.sacarValor();
+            break;
+
+        case 0:
+            System.out.println("saindo");
+            break;
     }
+}
+    while (op != 0);
+        scanner.close();
+}
 }
